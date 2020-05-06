@@ -24,6 +24,7 @@ function App() {
       </header>
 
       <Switch>
+        <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/topics" component={SimpleForumPage} />
         <Route exact path="/topics/:id" component={CommentViewPage} />
