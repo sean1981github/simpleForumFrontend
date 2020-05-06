@@ -1,0 +1,40 @@
+.oneTopic {
+  display: grid;
+  grid-template-areas:
+    "topicStarterName"
+    "topicName"
+    "commentCount";
+
+  border: 1px solid black;
+  margin: 16px;
+  padding: 16px;
+  grid-gap: 20px;
+  border-radius: 4px;
+  background-color: lightcyan;
+}
+
+.topicStarterName {
+  grid-area: topicStarterName;
+  font-size: 1em;
+  text-align: left;
+}
+
+.topicName {
+  grid-area: topicName;
+  font-size: 1em;
+  text-align: center;
+
+  border: 1px solid black;
+  margin: 16px;
+  padding: 16px;
+  grid-gap: 20px;
+  border-radius: 4px;
+  background-color: white;
+  word-break: break-all;
+}
+
+.commentCount {
+  grid-area: commentCount;
+  font-size: 1em;
+  text-align: left;
+}

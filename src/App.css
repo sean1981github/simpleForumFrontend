@@ -1,0 +1,25 @@
+.App {
+  /* display: flex;
+  justify-content: center;
+  flex-wrap: wrap; */
+  text-align: center;
+}
+
+.header {
+  text-align: right;
+}
+
+header > a + a {
+  margin-left: 1em;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+a.active {
+  color: orange;
+  font-size: larger;
+  text-decoration: underline;
+}
