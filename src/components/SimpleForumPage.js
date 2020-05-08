@@ -14,6 +14,10 @@ class SimpleForumPage extends React.Component {
     const URL = "/topics";
     console.log(`Fetch ${URL} from backend using axios`);
 
+    console.log(
+      "process.env.REACT_APP_BACKEND_URL:",
+      process.env.REACT_APP_BACKEND_URL
+    );
     axios.get(URL).then((res) => {
       console.log("axios return result:", res.data);
       this.setState({
