@@ -26,7 +26,7 @@ class OneTopicWithComments extends React.Component {
     const { topic } = this.props;
     const { id, ...restOfTopic } = topic;
 
-    const URL = `http://localhost:3002/topics/${id}/comments`;
+    const URL = `https://simple-forum-backend.herokuapp.com/topics/${id}/comments`;
     const data = { comment: commentText };
 
     console.log("URL:", URL);

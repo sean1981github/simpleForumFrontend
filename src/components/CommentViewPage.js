@@ -25,7 +25,7 @@ class CommentViewPage extends React.Component {
     // this.setState({ isLoading: true });
     console.log("Loading here");
     const { id } = this.props.match.params;
-    const URL = `http://localhost:3002/topics/${id}`;
+    const URL = `https://simple-forum-backend.herokuapp.com/topics/${id}`;
 
     console.log("URL:", URL);
 

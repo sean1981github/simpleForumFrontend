@@ -11,7 +11,7 @@ class SimpleForumPage extends React.Component {
   }
 
   fetchForumDataViaAPI = () => {
-    const URL = "http://localhost:3002/topics";
+    const URL = "https://simple-forum-backend.herokuapp.com/topics";
     console.log(`Fetch ${URL} from backend using axios`);
 
     axios.get(URL).then((res) => {
