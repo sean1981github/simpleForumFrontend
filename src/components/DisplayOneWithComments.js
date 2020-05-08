@@ -2,7 +2,7 @@ import React from "react";
 
 import "./DisplayOneWithComments.css";
 import CommentInputArea from "./CommentInputArea";
-import axios from "axios";
+import axios from "../utils/axios";
 
 class OneTopicWithComments extends React.Component {
   constructor(props) {
@@ -22,17 +22,17 @@ class OneTopicWithComments extends React.Component {
   };
 
   postForumDataViaAPI = async (commentText) => {
-    console.log("postForumDataViaAPI");
+    //console.log("postForumDataViaAPI");
     const { topic } = this.props;
     const { id, ...restOfTopic } = topic;
 
-    const URL = `https://simple-forum-backend.herokuapp.com/topics/${id}/comments`;
+    const URL = `/topics/${id}/comments`;
     const data = { comment: commentText };
 
-    console.log("URL:", URL);
+    // console.log("URL:", URL);
 
     const res = await axios.post(URL, data);
-    console.log("inside axios ", res.data);
+    //console.log("inside axios ", res.data);
     this.setState({
       isLoading: true,
 
@@ -44,7 +44,7 @@ class OneTopicWithComments extends React.Component {
   render() {
     const { topic } = this.props;
     const { id, topicName, topicStarterName, comments } = topic;
-    console.log("comments", comments);
+    //console.log("comments", comments);
 
     return (
       <div

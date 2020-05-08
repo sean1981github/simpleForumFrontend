@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://simple-forum-backend.herokuapp.com",
+  baseURL: process.env.REACT_APP_BACKEND_URL,
   timeout: 10000,
 });
 
