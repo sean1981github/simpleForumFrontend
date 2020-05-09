@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./DisplayOneWithComments.css";
-import CommentInputArea from "./CommentInputArea";
+import CommentPopUp from "./CommentPopUp";
 import axios from "../utils/axios";
 
 class OneTopicWithComments extends React.Component {
@@ -9,7 +9,16 @@ class OneTopicWithComments extends React.Component {
     super(props);
     this.state = {
       updatedComment: "",
+      showPopup: false,
     };
+  }
+
+  togglePopup() {
+    console.log("showPopup:", this.state.showPopup);
+    this.setState({
+      showPopup: !this.state.showPopup,
+    });
+    console.log("togglePopup:", this.state.showPopup);
   }
 
   handleChange = async (commentText) => {
@@ -18,6 +27,7 @@ class OneTopicWithComments extends React.Component {
     if (commentToAdd !== "") {
       const newCommentFrDB = await this.postForumDataViaAPI(commentToAdd);
       this.props.addComment(newCommentFrDB); // this is the part to update the props for refresh
+      this.togglePopup();
     }
   };
 
@@ -55,18 +65,29 @@ class OneTopicWithComments extends React.Component {
         <div className="topicStarterName">{topicStarterName}</div>
         <div className="topicName">{topicName}</div>
 
-        <div className="addCommentArea">
-          <CommentInputArea addCommentToDB={this.handleChange} />
-        </div>
-
         <div className="commentPlaceHolder">
-          {comments.map((commentVar) => {
-            return (
-              <div className="comment" key={commentVar.id}>
-                {commentVar.comment}
-              </div>
-            );
-          })}
+          <div className="commentActionArea">
+            <button onClick={this.togglePopup.bind(this)}>
+              + Comments
+              {/* <CommentInputArea addCommentToDB={this.handleChange} /> */}
+            </button>
+            {console.log("this.state.showPopup", this.state.showPopup)}
+            {this.state.showPopup ? (
+              <CommentPopUp
+                addCommentToDB={this.handleChange}
+                closePopup={this.togglePopup.bind(this)}
+              />
+            ) : null}
+          </div>
+          <div className="commentDisplayArea">
+            {comments.map((commentVar) => {
+              return (
+                <div className="comment" key={commentVar.id}>
+                  {commentVar.comment}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );

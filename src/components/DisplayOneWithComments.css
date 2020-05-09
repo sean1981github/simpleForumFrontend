@@ -3,7 +3,7 @@
   grid-template-areas:
     "topicStarterName"
     "topicName"
-    "addCommentArea"
+    /* "addCommentArea" */
     "commentPlaceHolder";
 
   border: 1px solid black;
@@ -12,6 +12,7 @@
   grid-gap: 20px;
   border-radius: 4px;
   background-color: lightcyan;
+  /* background-image: url("/backgroundImage.jpg"); */
 }
 
 /* .id {
@@ -24,6 +25,7 @@
   grid-area: topicStarterName;
   font-size: 1em;
   text-align: left;
+  /* color: white; */
 }
 
 .topicName {
@@ -38,9 +40,10 @@
   border-radius: 4px;
   background-color: white;
   word-break: break-all;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.addCommentArea {
+/* .addCommentArea {
   grid-area: addCommentArea;
   font-size: 1em;
   text-align: left;
@@ -51,25 +54,44 @@
   grid-gap: 20px;
   border-radius: 4px;
   background-color: lightcyan;
-}
+} */
 
-textarea {
+/* textarea {
   font-size: 1em;
   text-align: left;
   width: 100%;
-}
+} */
 
 .commentPlaceHolder {
   grid-area: commentPlaceHolder;
-  display: flex;
-
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-areas:
+    "commentActionArea"
+    "commentDisplayArea";
   border: 1px solid black;
   margin: 16px;
-  padding: 16px;
-  grid-gap: 20px;
+  /* padding: 16px;
+  grid-gap: 20px; */
   border-radius: 4px;
-  background-color: lightcyan;
+  /* background-image: url("/backgroundImage.jpg"); */
+}
+
+.commentActionArea {
+  grid-area: commentActionArea;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1em;
+  text-align: left;
+  padding-left: 16px;
+}
+
+.commentDisplayArea {
+  grid-area: commentDisplayArea;
+  display: flex;
+  flex-direction: column-reverse;
+
+  /* border: 1px solid black; */
+  /* border-radius: 4px; */
 }
 
 .comment {
@@ -84,3 +106,24 @@ textarea {
   background-color: white;
   word-break: break-all;
 }
+/* 
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+.popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  background: white;
+} */
