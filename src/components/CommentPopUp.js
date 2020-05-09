@@ -14,7 +14,7 @@ class CommentPopUp extends React.Component {
 
   handleChange = (event) => {
     this.setState({ commentText: event.target.value });
-    console.log(this.state.commentText); //for debugging purpose
+    //console.log(this.state.commentText); //for debugging purpose
   };
 
   addCommentToDB = () => {

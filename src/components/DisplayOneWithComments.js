@@ -14,11 +14,11 @@ class OneTopicWithComments extends React.Component {
   }
 
   togglePopup() {
-    console.log("showPopup:", this.state.showPopup);
+    //console.log("showPopup:", this.state.showPopup);
     this.setState({
       showPopup: !this.state.showPopup,
     });
-    console.log("togglePopup:", this.state.showPopup);
+    //console.log("togglePopup:", this.state.showPopup);
   }
 
   handleChange = async (commentText) => {
@@ -54,7 +54,6 @@ class OneTopicWithComments extends React.Component {
   render() {
     const { topic } = this.props;
     const { id, topicName, topicStarterName, comments } = topic;
-    //console.log("comments", comments);
 
     return (
       <div
@@ -67,11 +66,7 @@ class OneTopicWithComments extends React.Component {
 
         <div className="commentPlaceHolder">
           <div className="commentActionArea">
-            <button onClick={this.togglePopup.bind(this)}>
-              + Comments
-              {/* <CommentInputArea addCommentToDB={this.handleChange} /> */}
-            </button>
-            {console.log("this.state.showPopup", this.state.showPopup)}
+            <button onClick={this.togglePopup.bind(this)}>+ Comments</button>
             {this.state.showPopup ? (
               <CommentPopUp
                 addCommentToDB={this.handleChange}
